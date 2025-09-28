@@ -1,0 +1,163 @@
+/* ===== FONT OPTIONS FOR WEDDING WEBSITE ===== */
+/* 
+   Instructions: Copy one of the font option sections below 
+   and paste it into your main styles.css file, replacing the current typography section.
+*/
+
+/* ===== OPTION 1: WINDSONG ELEGANCE (CURRENT) ===== */
+/*
+h1, h2 {
+    font-family: 'WindSong', cursive;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+h3, h4 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+*/
+
+/* ===== OPTION 2: ELEGANT SCRIPT ===== */
+/*
+h1, h2 {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+h3, h4 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+*/
+
+/* ===== OPTION 3: MODERN ELEGANCE ===== */
+/*
+h1, h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+h3, h4 {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+*/
+
+/* ===== OPTION 4: ROMANTIC SCRIPT ===== */
+/*
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+*/
+
+/* ===== OPTION 5: PLAYFUL ELEGANCE ===== */
+/*
+h1, h2 {
+    font-family: 'Sacramento', cursive;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+*/
+
+/* ===== OPTION 6: BOLD & ELEGANT ===== */
+/*
+h1, h2 {
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+h3, h4 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+*/
+
+/* ===== OPTION 7: CLASSIC WEDDING ===== */
+/*
+h1, h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+*/
+
+/* ===== CURRENT ACTIVE OPTION - WINDSONG ===== */
+/* This is what's currently applied in your styles.css */
+h1, h2 {
+    font-family: 'WindSong', cursive;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+h3, h4 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* Font size adjustments for WindSong font */
+h1 { 
+    font-size: 5rem; /* WindSong looks great at larger sizes */
+}
+h2 { 
+    font-size: 3.5rem; 
+}
+h3 { 
+    font-size: 1.8rem; 
+}
+h4 { 
+    font-size: 1.3rem; 
+}
+
+/* Hero title specific styling for WindSong font */
+.hero-title .name {
+    font-size: 6rem; /* Make the main title even more prominent */
+    line-height: 1.1;
+}
+
+/* Responsive adjustments for WindSong */
+@media (max-width: 768px) {
+    .hero-title .name {
+        font-size: 4rem;
+    }
+    
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.5rem; }
+}
+
+@media (max-width: 480px) {
+    .hero-title .name {
+        font-size: 3rem;
+    }
+    
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+} 

@@ -1,105 +1,524 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>Ashwin & Teshanya - Wedding Invitation</title>
+    <meta name="description"
+        content="Join us for our special day - Ashwin van der Merwe & Teshanya Moodley's wedding celebration">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=WindSong:wght@400;500&display=swap"
+        rel="stylesheet">
 
-        .container {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 600px;
-            margin: 1rem;
-        }
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-
-        .button {
-            display: inline-block;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: transform 0.3s ease;
-            font-weight: 500;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .feature {
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-
-        .feature h3 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>Welcome to My Website</h1>
-        <p>This is a simple, modern webpage built with HTML and CSS. It features a clean design with responsive layout and smooth animations.</p>
-        
-        <div class="features">
-            <div class="feature">
-                <h3>Responsive</h3>
-                <p>Works on all devices</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="Tesh Wedding Monogram FINAL.png" alt="A & T Wedding Monogram" class="logo-image">
             </div>
-            <div class="feature">
-                <h3>Modern</h3>
-                <p>Clean, contemporary design</p>
-            </div>
-            <div class="feature">
-                <h3>Fast</h3>
-                <p>Lightweight and optimized</p>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#details" class="nav-link">Details</a></li>
+                <li><a href="#venue" class="nav-link">Venue</a></li>
+                <li><a href="#accommodation" class="nav-link">Accommodation</a></li>
+                <li><a href="#registry" class="nav-link">Registry</a></li>
+                <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
-        
-        <a href="#" class="button">Get Started</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="name">Ashwin</span>
+                    <span class="and">&</span>
+                    <span class="name">Teshanya</span>
+                </h1>
+                <p class="hero-date">ARE TYING THE KNOT</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section - COMMENTED OUT -->
+    <!--
+    <section id="details" class="details">
+        <div class="container">
+            <div class="section-header">
+                <h2>Wedding Details</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Date</h3>
+                    <p class="detail-date">January 17, 2026</p>
+                    <p class="detail-day">Saturday</p>
+                    <p class="detail-day">1.30pm for 2pm</p>
+
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3>Ceremony</h3>
+                    <p class="detail-time">2:00 PM</p>
+                    <p class="detail-venue">Lythwood Lodge</p>
+                    <p class="detail-dress">Formal Attire</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Reception</h3>
+                    <p class="detail-time">Following Ceremony</p>
+                    <p class="detail-venue">Lythwood Lodge</p>
+                    <p class="detail-dress">Formal Attire</p>
+                </div>
+                
+            
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Wedding Timeline Section -->
+    <section id="details" class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Order of Events</h2>
+                <div class="divider"></div>
+                <p style="margin-top: 1.5rem;">Saturday, January 17, 2026 at Lythwood Lodge</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">1:30 PM</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Guests Arrive</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">2:00 PM</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Christian Chapel Ceremony</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">3:00 PM</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Photos & Canapé Hour</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">4:00 PM</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-om"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Tamil Outdoor Ceremony</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">5:30 PM</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Reception & Celebrations</h3>
+                        <p>Formalities followed by dinner and dancing the night away</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section id="venue" class="venue">
+        <div class="container">
+            <div class="section-header">
+                <h2>Venue & Directions</h2>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Venue Header -->
+            <div class="venue-header">
+                <h3>Lythwood Lodge</h3>
+            </div>
+            
+            <div class="venue-content">
+                <!-- Left Half: Info Content -->
+                <div class="venue-left">
+
+                    <div class="info-content">
+                        <p>Our wedding ceremonies will be followed by a reception that will flow well into the night.
+                            Our venue has accommodation on-site (bed and breakfast) that will be exclusively available
+                            for our friends and family at reduced rates for the weekend.</p>
+
+                        <p>We strongly advise that you book in either at the venue, or somewhere close by, both for
+                            convenience and safety. Booking in at Lythwood the night of the wedding will allow you to 
+                            join us for breakfast on the first day of us as a married couple.</p>
+
+                        <p>Please contact our wedding planner, <strong>John</strong> (<a href="mailto:events@lythwood.co.za">events@lythwood.co.za</a>), 
+                            who will be more than happy to assist with accommodation arrangements. Alternatively, you're welcome to let either of us know if you require any help.</p>
+
+                     
+                    </div>
+                </div>
+                
+                <!-- Right Half: Venue Details -->
+                <div class="venue-right">
+                    <div class="venue-info">
+                        <div class="venue-details">
+                            <div class="venue-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Farm 37, Lidgetton West, 3270</span>
+                            </div>
+                            <div class="venue-item">
+                                <i class="fas fa-bed"></i>
+                                <span>Accommodation available on-site at R750pp, per night (including breakfast)</span>
+                            </div>
+                            <div class="info-note">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span><strong>Note:</strong> The beautiful location of Lythwood Lodge is only accessible via
+                                    a 5km stretch of dirt road.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="venue-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55594.95758430596!2d29.970008699999998!3d-29.4379781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef4078ca750aef1%3A0x3be99a5808d1ac93!2sFarm%2037%2C%20Lidgetton%20West%2C%203270!5e0!3m2!1sen!2sza!4v1753303731534!5m2!1sen!2sza"
+                    width="100%" height="280" style="border:0; border-radius: 15px; display: block;" allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Lythwood Lodge - Farm 37, Lidgetton West Location Map">
+                </iframe>
+
+                <!-- Overlay button on the map -->
+                <div class="map-overlay">
+                    <a href="https://www.google.com/maps/dir//Farm+37,+Lidgetton+West,+3270/@-29.4379781,29.9700087,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1ef4078ca750aef1:0x3be99a5808d1ac93!2m2!1d30.0524101!2d-29.4380035?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" class="btn-primary map-btn">
+                        <i class="fas fa-map-marker-alt"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Alternative Accommodation Section -->
+    <section id="accommodation" class="accommodation">
+        <div class="container">
+            <div class="section-header">
+                <h2>Alternative Accommodation Recommendations</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <!-- Full-width info section -->
+            <div class="accommodation-info">
+                <p>Whilst Lythwood Lodge Wedding Venue is solely available to our friends and family for the weekend of our wedding, we recommend staying closer to Pietermaritzburg should you be attending any of the pre-wedding events.</p>
+                
+                <p>Please see recommendations for accommodation situated closer to PMB for your convenience.</p>
+            
+               
+            </div>
+
+            <div class="accommodation-list-view">
+                <div class="accommodation-item">
+                    <div class="accommodation-type">
+                        <i class="fas fa-hotel"></i>
+                        <span>Hotel</span>
+                    </div>
+                    <div class="accommodation-content">
+                        <strong><a href="https://regalinn.co.za/pietermaritzburg/" target="_blank">Regal Inn</a></strong>
+                        <div class="accommodation-details">
+                            <p><i class="fas fa-map-marker-alt"></i> 47 Alan Paton Avenue, Scottsville, Pietermaritzburg</p>
+                            <p><i class="fas fa-route"></i> Approximately 45 minutes from wedding venue</p>
+                            <p><i class="fas fa-info-circle"></i> Modern hotel with 24hr secure parking, air conditioning, free WiFi, restaurant, and DSTV</p>
+                            <p><i class="fas fa-money-bill-wave"></i> From R750 per person sharing</p>
+                        </div>
+                        <span class="price"><a href="https://regalinn.co.za/pietermaritzburg/" target="_blank">Book Now</a></span>
+                    </div>
+                </div>
+
+                <div class="accommodation-item">
+                    <div class="accommodation-type">
+                        <i class="fas fa-hotel"></i>
+                        <span>Hotel</span>
+                    </div>
+                    <div class="accommodation-content">
+                        <strong><a href="https://citylodgehotels.com/our-hotels/Road%20Lodge/111" target="_blank">Road Lodge Pietermaritzburg</a></strong>
+                        <div class="accommodation-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Hesketh Dr, Hayfields, Pietermaritzburg, 3201</p>
+                            <p><i class="fas fa-route"></i> Approximately 45 minutes from wedding venue</p>
+                            <p><i class="fas fa-info-circle"></i> Budget-friendly hotel with essential amenities and comfortable accommodation</p>
+                            <p><i class="fas fa-money-bill-wave"></i> From R840 per person sharing</p>
+                        </div>
+                        <span class="price"><a href="https://citylodgehotels.com/our-hotels/Road%20Lodge/111" target="_blank">Book Now</a></span>
+                    </div>
+                </div>
+
+                <div class="accommodation-item">
+                    <div class="accommodation-type">
+                        <i class="fas fa-hotel"></i>
+                        <span>Hotel</span>
+                    </div>
+                    <div class="accommodation-content">
+                        <strong><a href="https://hotelreservations.southernsun.com/?adult=1&arrive=2026-01-15&chain=24151&child=0&config=sshi&configcode=sshi&currency=ZAR&depart=2026-01-17&hotel=5339&level=hotel&locale=en-GB&productcurrency=ZAR&rooms=1&synxishotelcode=EXB&theme=sepb&themecode=sepb" target="_blank">Stay Easy PMB</a></strong>
+                        <div class="accommodation-details">
+                            <p><i class="fas fa-map-marker-alt"></i> 50 Sanctuary Road, Pietermaritzburg, South Africa, 3201</p>
+                            <p><i class="fas fa-route"></i> Approximately 40 minutes from wedding venue</p>
+                            <p><i class="fas fa-info-circle"></i> Southern Sun hotel with quality accommodation and professional service</p>
+                            <p><i class="fas fa-money-bill-wave"></i> From R1230 per person sharing</p>
+                        </div>
+                        <span class="price"><a href="https://hotelreservations.southernsun.com/?adult=1&arrive=2026-01-15&chain=24151&child=0&config=sshi&configcode=sshi&currency=ZAR&depart=2026-01-17&hotel=5339&level=hotel&locale=en-GB&productcurrency=ZAR&rooms=1&synxishotelcode=EXB&theme=sepb&themecode=sepb" target="_blank">Book Now</a></span>
+                    </div>
+                </div>
+
+                <div class="accommodation-item">
+                    <div class="accommodation-type">
+                        <i class="fas fa-hotel"></i>
+                        <span>Hotel</span>
+                    </div>
+                    <div class="accommodation-content">
+                        <strong><a href="https://reservations.tsogosun.com/?adult=1&arrive=2025-09-28&chain=30224&child=0&currency=ZAR&depart=2025-09-29&hotel=39980&level=hotel&locale=en-US&productcurrency=ZAR&rooms=1" target="_blank">Golden Horse Hotel</a></strong>
+                        <div class="accommodation-details">
+                            <p><i class="fas fa-map-marker-alt"></i> 45 New England Road, Scottsville, Pietermaritzburg, South Africa, 3209</p>
+                            <p><i class="fas fa-route"></i> Approximately 50 minutes from wedding venue</p>
+                            <p><i class="fas fa-info-circle"></i> Tsogo Sun hotel with modern amenities and professional service</p>
+                            <p><i class="fas fa-money-bill-wave"></i> From R1700 per person sharing</p>
+                        </div>
+                        <span class="price"><a href="https://reservations.tsogosun.com/?adult=1&arrive=2025-09-28&chain=30224&child=0&currency=ZAR&depart=2025-09-29&hotel=39980&level=hotel&locale=en-US&productcurrency=ZAR&rooms=1" target="_blank">Book Now</a></span>
+                    </div>
+                </div>
+
+                <div class="accommodation-item">
+                    <div class="accommodation-type">
+                        <i class="fas fa-bed"></i>
+                        <span>B&B</span>
+                    </div>
+                    <div class="accommodation-content">
+                        <strong><a href="https://thesleepingbao.co.za/" target="_blank">The Sleeping Bao</a></strong>
+                        <div class="accommodation-details">
+                            <p><i class="fas fa-map-marker-alt"></i> 139 Howick Rd, Town Hill, Pietermaritzburg, 3201</p>
+                            <p><i class="fas fa-route"></i> Approximately 40 minutes from wedding venue</p>
+                            <p><i class="fas fa-info-circle"></i> Luxury B&B in 90-year-old face brick structure with rich wood interior, pool, braai area, and secure parking</p>
+                            <p><i class="fas fa-money-bill-wave"></i> Single: R790 (with breakfast) / R720 (without) | Double: R890 (with breakfast) / R790 (without)</p>
+                        </div>
+                        <span class="price"><a href="https://thesleepingbao.co.za/" target="_blank">Book Now</a></span>
+                    </div>
+                </div>
+
+                <div class="accommodation-item">
+                    <div class="accommodation-type">
+                        <i class="fas fa-bed"></i>
+                        <span>B&B</span>
+                    </div>
+                    <div class="accommodation-content">
+                        <strong><a href="https://www.booking.com/hotel/za/taunton-manor.en-gb.html?aid=318615&label=English_South_Africa_EN_ZA_20053122505-dh3Fh87GJDQFuEV_TL5HvQS637942139684%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-199155874585%3Alp1028688%3Ali%3Adec%3Adm%3Aag20053122505%3Acmp313260865&sid=c4a76cb751bd51479033c65f33e21acc&dest_id=-1272393&dest_type=city&dist=0&group_adults=6&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=6&req_children=0&room1=A%2CA%2CA%2CA%2CA%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759087824&srpvid=8f4d892556c005c0&type=total&ucfs=1&" target="_blank">Taunton Manor</a></strong>
+                        <div class="accommodation-details">
+                            <p><i class="fas fa-map-marker-alt"></i> 97 Taunton Rd, Wembley, Pietermaritzburg</p>
+                            <p><i class="fas fa-route"></i> Approximately 40 minutes from wedding venue</p>
+                            <p><i class="fas fa-info-circle"></i> Charming bed and breakfast accommodation with comfortable rooms and hospitality</p>
+                            <p><i class="fas fa-money-bill-wave"></i> From R870 pp sharing</p>
+                        </div>
+                        <span class="price"><a href="https://www.booking.com/hotel/za/taunton-manor.en-gb.html?aid=318615&label=English_South_Africa_EN_ZA_20053122505-dh3Fh87GJDQFuEV_TL5HvQS637942139684%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-199155874585%3Alp1028688%3Ali%3Adec%3Adm%3Aag20053122505%3Acmp313260865&sid=c4a76cb751bd51479033c65f33e21acc&dest_id=-1272393&dest_type=city&dist=0&group_adults=6&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=6&req_children=0&room1=A%2CA%2CA%2CA%2CA%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759087824&srpvid=8f4d892556c005c0&type=total&ucfs=1&" target="_blank">Book Now</a></span>
+                    </div>
+                </div>
+
+                <div class="accommodation-item">
+                    <div class="accommodation-type">
+                        <i class="fas fa-home"></i>
+                        <span>Self-Catering</span>
+                    </div>
+                    <div class="accommodation-content">
+                        <strong><a href="https://www.fountainsbnb.co.za/accommodation/" target="_blank">Fountains BnB</a></strong>
+                        <div class="accommodation-details">
+                            <p><i class="fas fa-map-marker-alt"></i> 9 Neden Road, Montrose, Pietermaritzburg</p>
+                            <p><i class="fas fa-route"></i> Approximately 40 minutes from wedding venue</p>
+                            <p><i class="fas fa-info-circle"></i> 2 private self-catering cottages and 3 semi self-catering garden suites in pleasant environment with undercover parking</p>
+                            <p><i class="fas fa-money-bill-wave"></i> From R800-R880 per person sharing (breakfast on request)</p>
+                        </div>
+                        <span class="price"><a href="https://www.fountainsbnb.co.za/rates-bookings/" target="_blank">Book Now</a></span>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Registry Section -->
+    <section id="registry" class="registry">
+        <div class="container">
+            <div class="section-header">
+                <h2>Gift Registry</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="registry-content">
+                <div class="registry-message">
+                    <i class="fas fa-heart registry-icon"></i>
+                    <h3>Your presence at our wedding is the greatest gift of all.</h3>
+                    <p>Having you celebrate with us on our special day means the world to us.</p>
+                    <p>Our gift registries are still under development, but we'll update this section soon with more details for those who have asked.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="rsvp">
+        <div class="container">
+            <div class="section-header">
+                <h2>RSVP</h2>
+                <div class="divider"></div>
+                <p>Please respond by December 17, 2025</p>
+            </div>
+
+            <form class="rsvp-form" id="rsvpForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="a657e630-62f6-40c8-b59c-859e50a9551d">
+                <input type="hidden" name="subject" value="New RSVP - Ashwin & Teshanya Wedding">
+
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="attending">Will you be attending? *</label>
+                    <select id="attending" name="attending" required>
+                        <option value="">Please select...</option>
+                        <option value="yes">Yes, I will attend</option>
+                        <option value="no">No, I cannot attend</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="attending_with">Who will you be attending with?</label>
+                    <textarea id="attending_with" name="attending_with"
+                        placeholder="e.g., My spouse, Alone, The Smith family, etc."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="dietary">Dietary Restrictions</label>
+                    <textarea id="dietary" name="dietary"
+                        placeholder="Please let us know of any dietary restrictions..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message (Optional)</label>
+                    <textarea id="message" name="message" placeholder="Any additional message..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Submit RSVP</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone" style="margin-top: 30px;"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>
+                                <a href="tel:+27837794021"
+                                    style="color: var(--text-light); text-decoration: none; display: block; margin-bottom: 0.3rem;">Teshanya - 083
+                                    779 4021</a>
+                                <a href="tel:+27716818169" style="color: var(--text-light); text-decoration: none;">Ashwin - 071
+                                    681 8169</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" style="margin-top: 30px;"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:contact@ashwinandteshanya.co.za"
+                                    style="color: var(--text-light); text-decoration: none;">contact@ashwinandteshanya.co.za</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ashwin & Teshanya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Success Snackbar -->
+    <div id="successSnackbar" class="snackbar">
+        <div class="snackbar-content">
+            <i class="fas fa-check-circle"></i>
+            <span>Thank you for your RSVP! We look forward to celebrating with you.</span>
+        </div>
     </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
+
 </html>

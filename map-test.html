@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Test - Lythwood Lodge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .map-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .map-wrapper {
+            margin: 20px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        iframe {
+            display: block;
+            border: 0;
+            width: 100%;
+        }
+        .test-info {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .fallback-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .fallback-link a {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+        .fallback-link a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <h1>Map Test - Lythwood Lodge</h1>
+        
+        <div class="test-info">
+            <h3>🧪 Map Testing</h3>
+            <p>This page tests if the Google Maps embed is working correctly.</p>
+            <p><strong>If you see a map below</strong> → The embed code is working!</p>
+            <p><strong>If you see a blank space</strong> → There might be a browser/network issue.</p>
+        </div>
+
+        <h2>📍 Lythwood Lodge Location</h2>
+        
+        <div class="map-wrapper">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3474.6849365191247!2d30.0524101!3d-29.4380035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef4078ca750aef1%3A0x3be99a5808d1ac93!2sLythwood%20Lodge!5e0!3m2!1sen!2sza!4v1753303731534!5m2!1sen!2sza"
+                width="100%" 
+                height="400" 
+                allowfullscreen="" 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Lythwood Lodge Location Map">
+            </iframe>
+        </div>
+
+        <div class="fallback-link">
+            <a href="https://www.google.com/maps/place/Lythwood+Lodge/@-29.4380035,30.0524101,17z" target="_blank">
+                🗺️ Open in Google Maps
+            </a>
+        </div>
+
+        <div style="margin-top: 30px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+            <h3>🔧 Troubleshooting Tips:</h3>
+            <ul>
+                <li><strong>Browser blocks:</strong> Some browsers block iframes - try a different browser</li>
+                <li><strong>Ad blockers:</strong> Disable ad blockers temporarily</li>
+                <li><strong>Network issues:</strong> Check your internet connection</li>
+                <li><strong>Corporate networks:</strong> Some networks block Google Maps embeds</li>
+                <li><strong>Mobile data:</strong> Try switching between WiFi and mobile data</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 20px; text-align: center; color: #666;">
+            <small>If this test page shows the map but your wedding website doesn't, there might be a CSS conflict.</small>
+        </div>
+    </div>
+</body>
+</html> 
