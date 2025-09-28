@@ -33,23 +33,29 @@ const attendingSelect = document.getElementById('attending');
 const guestCountDiv = document.getElementById('guestCount');
 
 // Show/hide guest count based on attendance
-attendingSelect.addEventListener('change', function() {
-    if (this.value === 'yes') {
-        guestCountDiv.style.display = 'block';
-    } else {
-        guestCountDiv.style.display = 'none';
-    }
-});
+if (attendingSelect && guestCountDiv) {
+    attendingSelect.addEventListener('change', function() {
+        if (this.value === 'yes') {
+            guestCountDiv.style.display = 'block';
+        } else {
+            guestCountDiv.style.display = 'none';
+        }
+    });
+}
 
-// Snackbar functionality
-function showSnackbar() {
-    const snackbar = document.getElementById('successSnackbar');
-    snackbar.classList.add('show');
-    
-    // Auto hide after 5 seconds
-    setTimeout(() => {
-        snackbar.classList.remove('show');
-    }, 5000);
+// Modal functionality
+function showModal() {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.classList.add('show');
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.classList.remove('show');
+    }
 }
 
 function hideSnackbar() {
@@ -87,14 +93,11 @@ rsvpForm.addEventListener('submit', function(e) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            // Show success snackbar
-            showSnackbar();
+            // Show success modal
+            showModal();
             
             // Reset form
             this.reset();
-            if (guestCountDiv) {
-                guestCountDiv.style.display = 'none';
-            }
         } else {
             alert('There was an error submitting your RSVP. Please try again.');
         }
@@ -107,7 +110,7 @@ rsvpForm.addEventListener('submit', function(e) {
 
 // Registry Toggle Functionality
 // Simple if-statement to manually update registry visibility
-const showRegistry = false; // Change this to true to show registry section
+const showRegistry = true; // Change this to true to show registry section
 
 if (showRegistry) {
     document.getElementById('registry').style.display = 'block';
@@ -197,13 +200,19 @@ document.querySelectorAll('.detail-card, .venue-map, .rsvp-form').forEach(elemen
     });
 });
 
-// Parallax effect for hero section (subtle)
+// Parallax effect for hero section (very subtle)
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    if (hero && scrolled < window.innerHeight) {
+        hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+    } else if (hero) {
+        // Reset transform when scrolled past hero
+        hero.style.transform = 'translateY(0)';
     }
 });
 
-console.log('Wedding website loaded successfully! 🎉'); 
+console.log('Wedding website loaded successfully! 🎉');
+
+// Make showModal globally accessible for testing
+window.showModal = showModal; 

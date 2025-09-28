@@ -204,6 +204,7 @@ p {
     text-align: center;
     background: linear-gradient(135deg, var(--pastel-pink) 0%, var(--pastel-lavender) 50%, var(--pastel-mint) 100%);
     overflow: hidden;
+    z-index: 1;
 }
 
 .hero-background {
@@ -289,6 +290,17 @@ p {
     margin-bottom: 4rem;
 }
 
+/* Ensure proper section isolation */
+section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add spacing between sections to prevent bleeding */
+section:not(:last-child) {
+    margin-bottom: 4rem;
+}
+
 .section-header h2 {
     margin-bottom: 1rem;
     color: var(--text-dark);
@@ -304,14 +316,16 @@ p {
 
 /* Details Section */
 .details {
-    padding: 6rem 0;
+    padding: 7rem 0;
     background: var(--white);
 }
 
 /* Timeline Section */
 .timeline-section {
-    padding: 4rem 0;
+    padding: 7rem 0;
     background: var(--white);
+    position: relative;
+    z-index: 2;
 }
 
 .timeline {
@@ -450,7 +464,7 @@ p {
 
 /* Venue Section */
 .venue {
-    padding: 6rem 0;
+    padding: 7rem 0;
     background: var(--pastel-peach);
 }
 
@@ -647,7 +661,7 @@ p {
 
 /* Accommodation Section */
 .accommodation {
-    padding: 6rem 0;
+    padding: 7rem 0;
     background: var(--ivory);
 }
 
@@ -923,7 +937,7 @@ p {
 
 /* Registry Section */
 .registry {
-    padding: 6rem 0;
+    padding: 7rem 0;
     background: var(--pastel-peach);
 }
 
@@ -970,7 +984,7 @@ p {
 
 /* RSVP Section */
 .rsvp {
-    padding: 6rem 0;
+    padding: 7rem 0;
     background: var(--white);
 }
 
@@ -1062,7 +1076,7 @@ p {
 
 /* Contact Section */
 .contact {
-    padding: 6rem 0;
+    padding: 7rem 0;
     background: var(--pastel-peach);
 }
 
@@ -1108,29 +1122,77 @@ p {
     padding: 2rem 0;
 }
 
-/* Snackbar */
-.snackbar {
+/* Modal */
+.modal {
+    display: none;
     position: fixed;
-    bottom: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--accent-color);
-    color: var(--white);
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    box-shadow: 0 10px 30px var(--shadow);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 10000;
-    transition: bottom 0.5s ease;
-    max-width: 90%;
-    width: auto;
-    visibility: hidden; /* Additional safety to ensure it's hidden */
-    opacity: 0; /* Additional safety to ensure it's hidden */
+    animation: fadeIn 0.3s ease;
 }
 
-.snackbar.show {
-    bottom: 2rem;
-    visibility: visible;
-    opacity: 1;
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: slideIn 0.3s ease;
+}
+
+.modal-header {
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-header i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.modal-header h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.modal-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+.modal-body p {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.modal-footer {
+    padding: 0 2rem 2rem;
+    text-align: center;
+}
+
+.modal-footer .btn-primary {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
 }
 
 .snackbar-content {
@@ -1146,15 +1208,10 @@ p {
         max-width: 95%;
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
-        bottom: -100px; /* Ensure it's hidden by default on mobile */
-        visibility: hidden; /* Additional safety to ensure it's hidden */
-        opacity: 0; /* Additional safety to ensure it's hidden */
     }
     
     .snackbar.show {
         bottom: 1rem; /* Show closer to bottom on mobile */
-        visibility: visible;
-        opacity: 1;
     }
     
     .snackbar-content {
@@ -1171,6 +1228,26 @@ p {
 }
 
 /* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1228,6 +1305,7 @@ p {
     .timeline-content {
         max-width: none;
         padding: 1.5rem;
+        margin: 0 1rem;
     }
     
     .timeline-content h3 {
@@ -1237,6 +1315,26 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Reduce section padding on mobile and adjust margins */
+    section {
+        padding: 5rem 0 !important;
+    }
+    
+    /* Reduce inter-section margins on mobile for better fit */
+    section:not(:last-child) {
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Ensure cards and elements don't extend beyond containers */
+    .detail-card, .accommodation-item, .registry-message, .rsvp-form {
+        margin: 0 1rem;
+    }
+    
+    /* Reduce shadows on mobile to prevent visual bleeding */
+    .detail-card, .accommodation-item, .registry-message, .rsvp-form, .venue-map {
+        box-shadow: 0 5px 15px var(--shadow);
+    }
+    
     .hamburger {
         display: flex;
     }
@@ -1320,6 +1418,15 @@ p {
 @media (max-width: 480px) {
     .container {
         padding: 0 1rem;
+    }
+    
+    /* Further reduce spacing on very small screens */
+    section {
+        padding: 4rem 0 !important;
+    }
+    
+    section:not(:last-child) {
+        margin-bottom: 1.5rem !important;
     }
     
     .nav-logo {
