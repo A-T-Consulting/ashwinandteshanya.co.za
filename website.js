@@ -41,6 +41,30 @@ attendingSelect.addEventListener('change', function() {
     }
 });
 
+// Snackbar functionality
+function showSnackbar() {
+    const snackbar = document.getElementById('successSnackbar');
+    snackbar.classList.add('show');
+    
+    // Auto hide after 5 seconds
+    setTimeout(() => {
+        snackbar.classList.remove('show');
+    }, 5000);
+}
+
+function hideSnackbar() {
+    const snackbar = document.getElementById('successSnackbar');
+    snackbar.classList.remove('show');
+}
+
+// Add click handler to close snackbar
+document.addEventListener('DOMContentLoaded', function() {
+    const snackbar = document.getElementById('successSnackbar');
+    if (snackbar) {
+        snackbar.addEventListener('click', hideSnackbar);
+    }
+});
+
 // Handle RSVP form submission
 rsvpForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -55,13 +79,30 @@ rsvpForm.addEventListener('submit', function(e) {
         return;
     }
     
-    // Here you would typically send the data to a server
-    // For now, we'll just show a success message
-    alert('Thank you for your RSVP! We look forward to celebrating with you.');
-    
-    // Reset form
-    this.reset();
-    guestCountDiv.style.display = 'none';
+    // Submit to Web3Forms
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Show success snackbar
+            showSnackbar();
+            
+            // Reset form
+            this.reset();
+            if (guestCountDiv) {
+                guestCountDiv.style.display = 'none';
+            }
+        } else {
+            alert('There was an error submitting your RSVP. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error submitting your RSVP. Please try again.');
+    });
 });
 
 // Registry Toggle Functionality

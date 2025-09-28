@@ -1123,10 +1123,14 @@ p {
     transition: bottom 0.5s ease;
     max-width: 90%;
     width: auto;
+    visibility: hidden; /* Additional safety to ensure it's hidden */
+    opacity: 0; /* Additional safety to ensure it's hidden */
 }
 
 .snackbar.show {
     bottom: 2rem;
+    visibility: visible;
+    opacity: 1;
 }
 
 .snackbar-content {
@@ -1134,6 +1138,32 @@ p {
     align-items: center;
     gap: 0.5rem;
     font-weight: 500;
+}
+
+/* Mobile snackbar adjustments */
+@media (max-width: 768px) {
+    .snackbar {
+        max-width: 95%;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        bottom: -100px; /* Ensure it's hidden by default on mobile */
+        visibility: hidden; /* Additional safety to ensure it's hidden */
+        opacity: 0; /* Additional safety to ensure it's hidden */
+    }
+    
+    .snackbar.show {
+        bottom: 1rem; /* Show closer to bottom on mobile */
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .snackbar-content {
+        gap: 0.3rem;
+    }
+    
+    .snackbar-content i {
+        font-size: 1rem;
+    }
 }
 
 .snackbar-content i {
