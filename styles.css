@@ -1147,6 +1147,100 @@ section:not(:last-child) {
     transform: translateY(-2px);
 }
 
+.honeymoon-fund {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: var(--ivory);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow);
+    text-align: left;
+}
+
+.honeymoon-fund h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.honeymoon-fund p {
+    font-family: 'Cinzel', serif;
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+}
+
+.bank-details {
+    margin-top: 1.5rem;
+}
+
+.bank-details p {
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.bank-details .copy-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.bank-details label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.bank-details .copy-field {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.bank-details input.copy-input {
+    flex: 1;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background: var(--white);
+}
+
+.bank-details button.copy-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    background: var(--accent-color);
+    color: var(--white);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bank-details button.copy-btn:hover {
+    background: transparent;
+    color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+    .bank-details .copy-field {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.4rem;
+    }
+
+    .bank-details input.copy-input {
+        width: 100%;
+    }
+
+    .bank-details button.copy-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* Contact Section */
 .contact {
     padding: 7rem 0;

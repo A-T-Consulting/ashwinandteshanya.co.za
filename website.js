@@ -185,6 +185,41 @@ document.addEventListener('keydown', (event) => {
 });
 
 // Countdown timer (optional)
+document.querySelectorAll('.copy-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-copy-target');
+        const input = document.getElementById(targetId);
+        if (!input) return;
+
+        const copyAction = text => {
+            button.textContent = 'Copied!';
+            setTimeout(() => {
+                button.textContent = 'Copy';
+            }, 2000);
+        };
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(input.value)
+                .then(copyAction)
+                .catch(() => fallbackCopy(input, button, copyAction));
+        } else {
+            fallbackCopy(input, button, copyAction);
+        }
+    });
+});
+
+function fallbackCopy(input, button, onSuccess) {
+    input.select();
+    input.setSelectionRange(0, input.value.length);
+    try {
+        document.execCommand('copy');
+        onSuccess();
+    } catch (err) {
+        console.error('Failed to copy text:', err);
+        button.textContent = 'Copy';
+    }
+}
+
 function updateCountdown() {
     const weddingDate = new Date('2026-01-17T14:00:00').getTime();
     const now = new Date().getTime();
