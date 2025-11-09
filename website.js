@@ -58,19 +58,6 @@ function closeModal() {
     }
 }
 
-function hideSnackbar() {
-    const snackbar = document.getElementById('successSnackbar');
-    snackbar.classList.remove('show');
-}
-
-// Add click handler to close snackbar
-document.addEventListener('DOMContentLoaded', function() {
-    const snackbar = document.getElementById('successSnackbar');
-    if (snackbar) {
-        snackbar.addEventListener('click', hideSnackbar);
-    }
-});
-
 // Handle RSVP form submission
 rsvpForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -170,6 +157,33 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Accommodation accordion toggles
+document.querySelectorAll('.accordion-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const item = toggle.closest('.accordion-item');
+        const isOpen = item.classList.contains('open');
+        item.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', (!isOpen).toString());
+    });
+});
+
+// Close modal when clicking the backdrop or pressing Escape
+document.addEventListener('click', (event) => {
+    const modal = document.getElementById('successModal');
+    if (modal && modal.classList.contains('show') && event.target === modal) {
+        closeModal();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        const modal = document.getElementById('successModal');
+        if (modal && modal.classList.contains('show')) {
+            closeModal();
+        }
+    }
+});
+
 // Countdown timer (optional)
 function updateCountdown() {
     const weddingDate = new Date('2026-01-17T14:00:00').getTime();
@@ -214,5 +228,6 @@ window.addEventListener('scroll', () => {
 
 console.log('Wedding website loaded successfully! 🎉');
 
-// Make showModal globally accessible for testing
-window.showModal = showModal; 
+// Make modal controls accessible globally
+window.showModal = showModal;
+window.closeModal = closeModal;

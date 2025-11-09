@@ -54,7 +54,7 @@ h4 { font-size: 1.3rem; }
 p, .detail-time, .detail-venue, .detail-dress, .detail-date, .detail-day, 
 .venue-item span, .contact-item p, .registry-message,
 .form-group label, .section-header p, .hero-date,
-.snackbar-content span, .footer p {
+.footer p {
     font-family: 'Cinzel', serif;
     font-weight: 400;
     color: var(--text-light);
@@ -680,6 +680,79 @@ section:not(:last-child) {
     margin-right: auto;
 }
 
+.accommodation-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.accordion-item {
+    background: var(--ivory);
+    border: 1px solid var(--primary-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.accordion-item.open {
+    box-shadow: 0 15px 40px var(--shadow);
+}
+
+.accordion-toggle {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: left;
+}
+
+.accordion-toggle span {
+    flex: 1;
+    padding-right: 1.5rem;
+}
+
+.accordion-toggle i {
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.open .accordion-toggle i {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 2rem;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.accordion-item.open .accordion-content {
+    max-height: 4000px;
+    padding: 0 2rem 2rem;
+}
+
+.accordion-placeholder {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.accordion-placeholder:last-child {
+    margin-bottom: 0;
+}
+
 .accommodation-info p {
     font-family: 'Cinzel', serif;
     font-weight: 400;
@@ -1195,38 +1268,6 @@ section:not(:last-child) {
     font-size: 1rem;
 }
 
-.snackbar-content {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 500;
-}
-
-/* Mobile snackbar adjustments */
-@media (max-width: 768px) {
-    .snackbar {
-        max-width: 95%;
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-    }
-    
-    .snackbar.show {
-        bottom: 1rem; /* Show closer to bottom on mobile */
-    }
-    
-    .snackbar-content {
-        gap: 0.3rem;
-    }
-    
-    .snackbar-content i {
-        font-size: 1rem;
-    }
-}
-
-.snackbar-content i {
-    font-size: 1.2rem;
-}
-
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -1412,6 +1453,19 @@ section:not(:last-child) {
     .registry-links {
         flex-direction: column;
         align-items: center;
+    }
+
+    .accordion-toggle {
+        padding: 1.2rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .accordion-content {
+        padding: 0 1.5rem;
+    }
+
+    .accordion-item.open .accordion-content {
+        padding: 0 1.5rem 1.5rem;
     }
 }
 
